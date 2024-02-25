@@ -8,10 +8,10 @@
 #include <string.h>
 #include <ctype.h>
 /**
- * struct stack_s - doubly linked list  of a stack (or queue)
+ * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
- * @prev:  previous element of the stack (or queue)
- * @next:  next element of the stack (or queue)
+ * @prev: points to the previous element of the stack (or queue)
+ * @next: points to the next element of the stack (or queue)
  *
  * Description: doubly linked list node structure
  * for stack, queues, LIFO, FIFO Holberton project
@@ -49,30 +49,30 @@ extern bus_t bus;
 typedef struct instruction_s
 {
 	char *opcode;
-	void (*f)(stack_t **stack, unsigned int line_number);
+	void (*f)(stack_t **stack, unsigned int line_nbr);
 } instruction_t;
 char *_realloc(char *ptr, unsigned int old_size, unsigned int new_size);
 ssize_t getstdin(char **lineptr, int file);
 char  *clean_line(char *content);
-void m_push(stack_t **h, unsigned int num);
-void m_pall(stack_t **h, unsigned int num);
-void m_pint(stack_t **h, unsigned int num);
-int execute(char *content, stack_t **h, unsigned int c, FILE *file);
-void free_stack(stack_t *h);
-void m_pop(stack_t **h, unsigned int c);
-void m_swap(stack_t **h, unsigned int c);
-void m_add(stack_t **h, unsigned int c);
-void m_nop(stack_t **h, unsigned int c);
-void m_sub(stack_t **h, unsigned int c);
-void m_div(stack_t **h, unsigned int c);
-void m_mul(stack_t **h, unsigned int c);
-void m_mod(stack_t **h, unsigned int c);
-void m_pchar(stack_t **h, unsigned int c);
-void m_pstr(stack_t **h, unsigned int c);
-void m_rotl(stack_t **h, unsigned int c);
-void m_rotr(stack_t **h, __attribute__((unused)) unsigned int c);
-void addnode(stack_t **h, int n);
-void addqueue(stack_t **h, int n);
-void m_queue(stack_t **h, unsigned int c);
-void f_stack(stack_t **h, unsigned int c);
+void m_push(stack_t **hd, unsigned int nbr);
+void m_pall(stack_t **hd, unsigned int nbr);
+void m_pint(stack_t **hd, unsigned int nbr);
+int execute(char *content, stack_t **hd, unsigned int ctr, FILE *file);
+void free_stack(stack_t *hd);
+void m_pop(stack_t **hd, unsigned int ctr);
+void m_swap(stack_t **hd, unsigned int ctr);
+void m_add(stack_t **hd, unsigned int ctr);
+void m_nop(stack_t **hd, unsigned int ctr);
+void m_sub(stack_t **hd, unsigned int ctr);
+void m_div(stack_t **hd, unsigned int ctr);
+void m_mul(stack_t **hd, unsigned int ctr);
+void m_mod(stack_t **hd, unsigned int ctr);
+void m_pchar(stack_t **hd, unsigned int ctr);
+void m_pstr(stack_t **hd, unsigned int ctr);
+void m_rotl(stack_t **hd, unsigned int ctr);
+void m_rotr(stack_t **hd, __attribute__((unused)) unsigned int ctr);
+void addnode(stack_t **hd, int n);
+void addqueue(stack_t **hd, int n);
+void m_queue(stack_t **hd, unsigned int ctr);
+void m_stack(stack_t **hd, unsigned int ctr);
 #endif
